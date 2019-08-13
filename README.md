@@ -14,7 +14,7 @@ available computing resources.  There are many tradeoffs to
 be navigated, and a comprehensive account of the issues will take
 substantial work.  A brief sketch follows.
 
-- _Permit control of RAM usage._  Canonical examples of working
+- _**Permit control of RAM usage.**_  Canonical examples of working
 with R typically assume all data are available for immediate
 random access: the iris dataset, mtcars.  In the Bioconductor
 context, examples include golubEsets, ALL.  From the perspective
@@ -34,23 +34,33 @@ of array processing for genomics, we want
 
     The new ALTREP concepts of base R are also relevant.
 
-- _Permit parallelized array operations._  This topic is substantial
+- _**Permit parallelized array operations.**_  This topic is substantial
 and can be tackled at various levels.  The most basic concerns
 seem to be:
     - Stay out of the way of implicit parallelism achievable for primitive
-operations, e.g., as discussed by Roger Peng (https://simplystatistics.org/2016/01/21/parallel-blas-in-r/)
+operations, e.g., as discussed by Roger Peng (https://simplystatistics.org/2016/01/21/parallel-blas-in-r/).
     - Foster parallelized distributed computation on subarrays 
-whenever relevant 
+whenever relevant.
 
-- _Foster lazy computation._  The idea here is that we defer
+
+- _**Foster lazy computation.**_  The idea here is that we defer
 computations as long as possible, to take advantage of reductions
 in computational effort that may arise from filtering
 
-- _Take advantage of new technologies._  This is a complex
+- _**Take advantage of new technologies.**_  This is a complex
 topic.  Apache Spark is of definite interest, and many approaches
 to analysis-oriented storage deserve attention.  The [Ursa Labs](https://ursalabs.org/tech/) roadmap page has many relevant references.
 
-#### Exemplary packages, datasets, and repositories
+#### Exemplary documents, packages, datasets, and repositories
+
+##### Documents
+
+- The [Orchestrating Single Cell Analysis (OSCA)](https://github.com/Bioconductor/OSCABase/) project includes
+an Rmarkdown file with an overview of [big-data methods](https://github.com/Bioconductor/OSCABase/blob/master/analysis/big-data.Rmd).
+
+- Peter Hickey's [Bioc 2019 workshop](https://github.com/PeteHaitch/BioC2019_DelayedArray_workshop/blob/master/vignettes/Effectively_using_the_DelayedArray_framework_for_users.Rmd) on DelayedArray provides many details.
+
+##### Packages
 
 - [TENxBrainData](https://github.com/Bioconductor/TENxBrainData).  This
 package includes a vignette that helps us understand the roles of
